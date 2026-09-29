@@ -1,0 +1,232 @@
+@import "tailwindcss";
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center
+           cursor-pointer
+           px-8 py-4
+           font-semibold text-white
+           rounded-full
+           transition-all duration-300;
+    background: linear-gradient(135deg, #f97316, #ea580c);
+  }
+
+  .btn-primary:hover {
+    @apply -translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center
+           cursor-pointer
+           px-8 py-4
+           font-semibold text-white
+           rounded-full
+           transition-all duration-300
+           border border-[#333];
+    background: transparent;
+  }
+
+  .btn-secondary:hover {
+    @apply text-orange-500 border-orange-500;
+    background: rgba(249, 115, 22, 0.1);
+  }
+
+  .card {
+    @apply rounded-3xl
+           overflow-hidden
+           transition-all duration-500
+           bg-[#161616]
+           border border-[#262626];
+  }
+
+  .card:hover {
+    @apply -translate-y-1 border-[#333];
+  }
+
+  .glass-card {
+    @apply rounded-3xl
+           bg-[#161616]/80
+           border border-[#262626]
+           backdrop-blur-xl;
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2
+           mb-6
+           px-4 py-2
+           text-sm font-medium
+           text-orange-500
+           rounded-full
+           border border-orange-500/30
+           bg-orange-500/10;
+  }
+
+  .section-label::before {
+    content: "";
+    @apply size-1.5 rounded-full bg-orange-500;
+    animation: pulse 2s infinite;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl lg:text-6xl
+           leading-tight
+           font-bold
+           text-white;
+  }
+
+  .section-subtitle {
+    @apply mt-4
+           text-lg
+           leading-relaxed
+           text-neutral-400;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #f97316, #fbbf24);
+  }
+
+  .tag {
+    @apply inline-flex items-center
+           px-4 py-1.5
+           text-xs font-medium
+           text-neutral-400
+           bg-[#1a1a1a]
+           border border-[#262626]
+           rounded-full
+           transition-all duration-200;
+  }
+
+  .tag:hover {
+    @apply text-orange-500 border-orange-500;
+  }
+
+  .input-dark {
+    @apply w-full
+           px-5 py-4
+           text-white
+           bg-[#161616]
+           border border-[#262626]
+           rounded-xl
+           outline-none
+           transition-all duration-300;
+  }
+
+  .input-dark::placeholder {
+    @apply text-neutral-500;
+  }
+
+  .input-dark:focus {
+    @apply border-orange-500;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #262626, transparent);
+  }
+
+  .img-zoom {
+    @apply overflow-hidden;
+  }
+
+  .img-zoom img {
+    @apply transition-transform duration-700;
+  }
+
+  .img-zoom:hover img {
+    @apply scale-[1.08];
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 60px rgba(249, 115, 22, 0.2);
+  }
+
+  .orb {
+    @apply absolute
+           pointer-events-none
+           rounded-full
+           blur-[80px]
+           opacity-30;
+  }
+
+  .orb-orange {
+    @apply bg-orange-500;
+  }
+
+  .orb-yellow {
+    @apply bg-amber-400;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .link-hover {
+    @apply relative;
+  }
+
+  .link-hover::after {
+    content: "";
+    @apply absolute bottom-0 left-0
+           h-0.5 w-0
+           bg-orange-500
+           transition-all duration-300;
+  }
+
+  .link-hover:hover::after {
+    @apply w-full;
+  }
+
+  .line-clamp-2 {
+    @apply line-clamp-2;
+  }
+
+  .line-clamp-3 {
+    @apply line-clamp-3;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+*{
+  font-family: "Tajawal", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
